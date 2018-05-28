@@ -5,20 +5,61 @@
 
 body {
 	background-color: #F8FFFE;
-	font-family: 'Nunito Sans';
+
+	color: #2E3236;
 }
 
 h2 {
 	margin-top: 25px;
 	margin-bottom: 25px; 
+	font-family: 'Nunito Sans', sans-serif !important;
 }
 
 .card {
 	background-color: white;
 	padding: 20px;
+
+	border-color: #E9F2EF;
+	border-width: 1px;
+	border-style: solid;
+
+	margin: 20px;
 }
 
 a {
 	margin-bottom: 0px !important;
 	background-color: #00C1DB !important;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  font-size: 24px;
+  color: #F8FFFE;
+  font-weight: 400;
+}
+
+li {
+
+}
+
+@media only screen and (max-width: 40em) { /* small */
+	.menu li{}
+}
+
+@media only screen and (min-width: 40.063em) { /* medium */
+	.menu li{	
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+	.side-bar {
+		height: 100vh;
+	}
+}
+
+.side-bar {
+	text-align: center;
+	background-color: #2E3236;
 }
