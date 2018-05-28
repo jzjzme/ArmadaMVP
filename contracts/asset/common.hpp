@@ -44,14 +44,40 @@ namespace identity {
       EOSLIB_SERIALIZE( certrow , (property)(trusted)(certifier)(confidence)(type)(data)(id) )
    };
 
-   struct identrow {
+   struct trackrow {
+      uint64_t            id;
+      property_name       property;
+      uint64_t            check;
+      account_name        oracle;
+      std::string         type;
+      std::vector<char>   data;
+      uint64_t primary_key() const { return id; }
+      static eosio::key256 key(uint64_t property, uint64_t oracle) {
+         return eosio::key256::make_from_word_sequence<uint64_t>(property, check, oracle);
+      }
+      eosio::key256 get_key() const { return key(property, check, oracle); }
+
+      EOSLIB_SERIALIZE( trackrow , (property)(check)(oracle)(confidence)(type)(data)(id) )
+   };
+
+   struct nodesrow {
       uint64_t     identity;
-      account_name creator;
+      account_name owner;
 
       uint64_t primary_key() const { return identity; }
 
-      EOSLIB_SERIALIZE( identrow , (identity)(creator) )
+      EOSLIB_SERIALIZE( nodesrow , (identity)(owner) )
    };
+
+   struct assetrows {
+      uint64_t     asset_id;
+      account_name owner;
+
+      uint64_t primary_key() const { return asset_id; }
+
+      EOSLIB_SERIALIZE( assetrows , (asset_id)(owner) )
+   };
+
 
    struct trustrow {
       account_name account;
@@ -64,13 +90,17 @@ namespace identity {
    typedef eosio::multi_index<N(certs), certrow,
                               eosio::indexed_by< N(bytuple), eosio::const_mem_fun<certrow, eosio::key256, &certrow::get_key> >
                               > certs_table;
-   typedef eosio::multi_index<N(ident), identrow> idents_table;
+   typedef eosio::multi_index<N(assets), trackrow,
+                              eosio::indexed_by< N(bytuple), eosio::const_mem_fun<certrow, eosio::key256, &certrow::get_key> >
+                              > track_table;
+   typedef eosio::multi_index<N(ident), nodesrow> nodes_table;
+   typedef eosio::multi_index<N(asset), assetrows> assets_table;
    typedef eosio::singleton<N(account), identity_name>  accounts_table;
    typedef eosio::multi_index<N(trust), trustrow> trust_table;
 
-   class identity_base {
+   class armada_base {
       public:
-         identity_base( account_name acnt) : _self( acnt ) {}
+         armada_base( account_name acnt) : _self( acnt ) {}
 
          bool is_trusted_by( account_name trusted, account_name by );
 

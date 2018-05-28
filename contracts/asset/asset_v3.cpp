@@ -3,7 +3,7 @@
 #include <eosiolib/dispatcher.hpp>
 #include <eosiolib/vector.hpp>
 
-namespace identity {
+namespace armada {
    using eosio::action_meta;
    using eosio::singleton;
    using eosio::key256;
@@ -12,9 +12,9 @@ namespace identity {
 
 
 
-class contract : public armada{
+class contract : public armada_base{
 	public:
-		using armada::armada;
+		using armada_base::armada_base;
 
          void settrust( const account_name trustor, ///< the account authorizing the trust
                         const account_name trusting, ///< the account receiving the trust
@@ -61,8 +61,43 @@ class contract : public armada{
          void check_asset( const account_name owner,
          					const account_name oracle,
          					const identity_name asset_id,
-         					const vector<checkvalue>){
+         					const vector<checkvalue>& checks){
+         	require_auth( oracle);
+         	if (owner != oracle)
+         		require_auth(oracle);
 
+         	assets_table t(_self, _self);
+         	eosio_assert( t.find( asset_id) != t.end(), "asset does not exist");
+
+         	//asset search
+         	track_table tracker( _self, asset_id);
+
+         	for( const auto& check : checks){
+         		auto idx = tracker.template get_index<N(bytuple)>();
+         		eosio_assert(check.type.size() <= 32, "not longer than 32 bytes");
+         		auto itr = idx.lower_bound( trackrow::key(check.property, check, oracle)
+
+         			if(itr != idx.end() && itr->property == check.property && itr->check == check && itr->oracle == oracle){
+         				idx.modify(itr, 0, [&] (trackrow& row){
+         					row.type = check.type;
+         					row.data = check.data;
+         				});
+         			} else{
+         				auto pk = tracker.available_primary_key();
+         				tracker.emplace(_self, [&](trackrow& row){
+         					row.id = pk;
+         					row.property = check.property;
+         					row.check = check;
+         					row.oracle = oracle;
+         					row.type = check.type;
+         					row.data = check.data;
+         				});
+         			}
+         			auto itr_old = idx.lower_bound( trackrow::key(check.property, !check, oracle));
+         			if (itr_old !=idx.end() && itr_old->property == check.property && itr_old->check == !check && itr_old->oracle ==oracle){
+         				idx.erase(itr_old);
+         			}
+         	}
          }
 
          void certification ( const account_name owner,
@@ -148,4 +183,4 @@ class contract : public armada{
 	};
 }
 
-EOSIO_ABI( identity::contract, (create)(certprop)(settrust) );
+EOSIO_ABI( armada::contract, (check_asset)(certification)(settrust)(register_account)(register_asset) );

@@ -1,6 +1,6 @@
 //asset.cpp
 
-#include <eos.hpp>
+#include <eosio.hpp>
 
 struct asset{
 	int product_id;
@@ -77,3 +77,5 @@ void query_asset(){
 //not sure how to query the info yet.
 
 }
+
+
