@@ -1,0 +1,24 @@
+
+.bounded {
+	max-width: 95%;
+}
+
+body {
+	background-color: #F8FFFE;
+	font-family: 'Nunito Sans';
+}
+
+h2 {
+	margin-top: 25px;
+	margin-bottom: 25px; 
+}
+
+.card {
+	background-color: white;
+	padding: 20px;
+}
+
+a {
+	margin-bottom: 0px !important;
+	background-color: #00C1DB !important;
+}
