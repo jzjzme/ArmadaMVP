@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,66 @@
     <title>Product card, products box, bootstrap 4 ecommerce item grid view - Bootsnipp.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <!DOCTYPE html><html lang='en' class=''>
+    <head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/EugeneMusika/pen/JXBrNY?depth=everything&order=popularity&page=13&q=product&show_forks=false" />
+
+
+    <style class="cp-pen-styles">@import url(https://fonts.googleapis.com/css?family=Lato:700,400,300italic,300,100);
+     @import url(https://necolas.github.io/normalize.css/4.1.1/normalize.css);
+    .c-aside-nav {
+      z-index: 1000;
+      background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/LOGO.png);
+      background-size: 33%;
+      background-position: center 3vh;
+      background-repeat: no-repeat;
+      position: fixed;
+      height: 100%;
+      width: 12vh;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 4vh 0px rgba(219, 219, 219, 0.5)
+    }
+
+    .c-aside-nav .fa {
+      display: block;
+      color: #d8d8d8;
+      font-size: 3.1vh;
+      text-align: center;
+      padding: 3vh;
+      transition: color 0.15s 0s ease-in-out, text-shadow 0.15s 0s ease-in-out
+    }
+
+    .c-aside-nav .fa:hover {
+      color: rgba(0, 35, 255, 0.76);
+      text-shadow: 0px 0px 0.8vh #0050ff
+    }
+
+    .c-aside-nav .is-active {
+      color: #0023ff
+    }
+
+    .c-aside-nav .fa-home {
+      margin-top: 16vh
+    }
+
+    a {
+      text-decoration: none;
+      color: #000
+    }
+
+    .c-aside-nav .fa-sign-in {
+      position: absolute;
+      bottom: 4vh;
+      display: block;
+      width: 100%;
+      height: 8vh;
+      text-align: center;
+      line-height: 8vh;
+      padding: 2vh 0;
+      -webkit-transform: rotateZ(90deg);
+      transform: rotateZ(90deg)
+    }
     <style type="text/css">
         .card-product .img-wrap {
     border-radius: 3px 3px 0 0;
@@ -14,6 +75,7 @@
     height: 220px;
     text-align: center;
 }
+
 .card-product .img-wrap img {
     max-height: 100%;
     max-width: 100%;
@@ -38,18 +100,25 @@
 .card-product .price-old {
     color: #999;
 }
+
+
     </style>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+  <aside class="c-aside-nav">
+  <!-- choose the active <a> element by adding .is-active -->
+    <a href="index.html" class="fa fa-home"></a>
+    <a href="" class="fa fa-shopping-basket"></a>
+    <a href="search.html" class="fa fa-search"></a>
+    <a href="" class="fa fa-sign-in"></a>
+  </aside>
 <div class="container">
 
 
 <hr>
-
-
-
 
 <div class="row">
 <div class="col-md-4">
