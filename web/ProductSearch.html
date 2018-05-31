@@ -12,6 +12,9 @@
     <!DOCTYPE html><html lang='en' class=''>
     <head><script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/EugeneMusika/pen/JXBrNY?depth=everything&order=popularity&page=13&q=product&show_forks=false" />
 
+      <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/supah/pen/XdKMJK?depth=everything&order=popularity&page=63&q=translate&show_forks=false" />
+
+      <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400'>
 
     <style class="cp-pen-styles">@import url(https://fonts.googleapis.com/css?family=Lato:700,400,300italic,300,100);
      @import url(https://necolas.github.io/normalize.css/4.1.1/normalize.css);
@@ -76,6 +79,57 @@
     text-align: center;
 }
 
+.gallery a {
+position: relative;
+display: block;
+}
+
+.overlay {
+background-color: rgba(0, 0, 0, 0.8);
+color: #fff;
+cursor: pointer;
+display: block;
+font-size: 100px;
+height: 100%;
+width: 100%;
+padding-top:40px;
+top: 0;
+left: 0;
+opacity: 0;
+overflow: hidden;
+position: absolute;
+text-align: center;
+transition: all 0.5s ease 0s;
+z-index: 20;
+}
+
+.overlay2{
+background-color: rgba(0, 0, 0, 0.8);
+color: #fff;
+cursor: pointer;
+display: block;
+font-size: 100px;
+height: 100%;
+width: 100%;
+padding-top:100px;
+top: 0;
+left: 0;
+opacity: 0;
+overflow: hidden;
+position: absolute;
+text-align: center;
+transition: all 0.5s ease 0s;
+z-index: 20;
+}
+
+.gallery a:hover .overlay ,
+.gallery a:hover .overlay2 {
+opacity: 0.8;
+}
+
+.img-space{
+margin:20px 0px;
+}
 .card-product .img-wrap img {
     max-height: 100%;
     max-width: 100%;
@@ -115,10 +169,125 @@
     <a href="search.html" class="fa fa-search"></a>
     <a href="" class="fa fa-sign-in"></a>
   </aside>
+
+
+  <section id="gallery">
+  	    <div class="container">
+  		   <div class="row">
+
+  		        <div class="col-lg-2 col-xs-12 img-space">
+  					<div class="gallery">
+  						<a href="https://images.pexels.com/photos/403571/pexels-photo-403571.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+  						   <img class="img-responsive" src="https://images.pexels.com/photos/403571/pexels-photo-403571.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+  						   <span class="overlay">+</span>
+  						</a>
+  					</div>
+  				</div>
+
+  				<div class="col-lg-2 col-xs-12 img-space">
+  					<div class="gallery">
+  						<a href="https://images.pexels.com/photos/346731/pexels-photo-346731.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+  						   <img class="img-responsive" src="https://images.pexels.com/photos/346731/pexels-photo-346731.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+  						   <span class="overlay">+</span>
+  						</a>
+  					</div>
+  				</div>
+
+  				<div class="col-lg-2 col-xs-12 img-space">
+  					<div class="gallery">
+  						<a href="https://images.pexels.com/photos/6332/coffee-cup-books-home.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+  						   <img class="img-responsive" src="https://images.pexels.com/photos/6332/coffee-cup-books-home.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+  						   <span class="overlay">+</span>
+  						</a>
+  					</div>
+  				</div>
+
+  				<div class="col-lg-2 col-xs-12 img-space">
+  					<div class="gallery">
+  						<a href="https://images.pexels.com/photos/2097/desk-office-pen-ruler.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+  						   <img class="img-responsive" src="https://images.pexels.com/photos/2097/desk-office-pen-ruler.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+  						   <span class="overlay">+</span>
+  						</a>
+  					</div>
+  				</div>
+
+  				<div class="col-lg-2 col-xs-12 img-space">
+  					<div class="gallery">
+  						<a href="https://images.pexels.com/photos/276720/pexels-photo-276720.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+  						   <img class="img-responsive" src="https://images.pexels.com/photos/276720/pexels-photo-276720.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+  						   <span class="overlay">+</span>
+  						</a>
+  					</div>
+
+  				</div>
+          <div class="col-lg-2 col-xs-12 img-space">
+  					<div class="gallery">
+  						<a href="https://images.pexels.com/photos/276720/pexels-photo-276720.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+  						   <img class="img-responsive" src="https://images.pexels.com/photos/276720/pexels-photo-276720.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+  						   <span class="overlay">+</span>
+  						</a>
+  					</div>
+
+  				</div>
+          <div class="col-lg-2 col-xs-12 img-space">
+        <div class="gallery">
+          <a href="https://images.pexels.com/photos/403571/pexels-photo-403571.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+             <img class="img-responsive" src="https://images.pexels.com/photos/403571/pexels-photo-403571.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+             <span class="overlay">+</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-xs-12 img-space">
+        <div class="gallery">
+          <a href="https://images.pexels.com/photos/346731/pexels-photo-346731.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+             <img class="img-responsive" src="https://images.pexels.com/photos/346731/pexels-photo-346731.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+             <span class="overlay">+</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-xs-12 img-space">
+        <div class="gallery">
+          <a href="https://images.pexels.com/photos/6332/coffee-cup-books-home.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+             <img class="img-responsive" src="https://images.pexels.com/photos/6332/coffee-cup-books-home.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+             <span class="overlay">+</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-xs-12 img-space">
+        <div class="gallery">
+          <a href="https://images.pexels.com/photos/2097/desk-office-pen-ruler.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+             <img class="img-responsive" src="https://images.pexels.com/photos/2097/desk-office-pen-ruler.jpg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+             <span class="overlay">+</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-xs-12 img-space">
+        <div class="gallery">
+          <a href="https://images.pexels.com/photos/276720/pexels-photo-276720.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+             <img class="img-responsive" src="https://images.pexels.com/photos/276720/pexels-photo-276720.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+             <span class="overlay">+</span>
+          </a>
+        </div>
+
+      </div>
+      <div class="col-lg-2 col-xs-12 img-space">
+        <div class="gallery">
+          <a href="https://images.pexels.com/photos/276720/pexels-photo-276720.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" target="_blank">
+             <img class="img-responsive" src="https://images.pexels.com/photos/276720/pexels-photo-276720.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%;"/>
+             <span class="overlay">+</span>
+          </a>
+        </div>
+
+      </div>
+
+  	    </div>
+      </section>
+
 <div class="container">
-
-
-<hr>
 
 <div class="row">
 <div class="col-md-4">
