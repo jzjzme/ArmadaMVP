@@ -2,6 +2,7 @@
 	"products": [{
 			"id": 0,
 			"name": "Woman chiffon blouse",
+			"images": ["https://i.imgur.com/Hvt7n1z.jpg"],
 			"quantity": 99
 		}, {
 			"id": 1,
