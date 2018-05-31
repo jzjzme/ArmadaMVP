@@ -1,0 +1,11 @@
+{
+	"products": [{
+			"id": 0,
+			"name": "Woman chiffon blouse",
+			"quantity": 99
+		}, {
+			"id": 1,
+			"name": "Test 2",
+			"quantity": 20
+		}]
+}
