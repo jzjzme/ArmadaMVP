@@ -26,7 +26,11 @@ h2 {
 	margin: 20px;
 }
 
-a {
+a.mlink {
+  color: #F8FFFE;
+}
+
+a.mbutton {
 	margin-bottom: 0px !important;
 	background-color: #00C1DB !important;
 	font-family: 'Nunito Sans', sans-serif;
