@@ -16,3 +16,8 @@ $("#checkpoint").click(function() {
     alert(JSON.stringify(resp));
   });
 });
+
+var qr = new QRious({
+        element: document.getElementById('qr'),
+        value: 'https://github.com/neocotic/qrious'
+      });
