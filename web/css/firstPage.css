@@ -445,6 +445,19 @@ a {
   box-sizing: border-box;
   background-color: #fff
 }
+.catalog__product2 {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: vw;
+  border: 1vw solid #f0f0f0;
+  padding: 1.5vw;
+  box-sizing: border-box;
+  background-color: #fff
+}
 
 .catalog__product h2,
 .catalog__product p {
@@ -463,6 +476,29 @@ a {
 }
 
 .catalog__product .catalog__product__price {
+  color: #0023ff;
+  font-weight: 700;
+  font-size: 1.1vw;
+  margin: 0
+}
+
+.catalog__product2 h2,
+.catalog__product2 p {
+  margin: 0
+}
+
+.catalog__product2 h2 {
+  font-weight: 300;
+  font-size: 1.5vw
+}
+
+.catalog__product2 p {
+  font-weight: 300;
+  font-size: 0.8vw;
+  margin-bottom: 1vw
+}
+
+.catalog__product2 .catalog__product__price {
   color: #0023ff;
   font-weight: 700;
   font-size: 1.1vw;
