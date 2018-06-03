@@ -36,7 +36,7 @@
 }
 
 .c-aside-nav .is-active {
-  color: #0023ff
+  color: #00C1DB
 }
 
 .c-aside-nav .fa-home {
@@ -85,7 +85,7 @@ input[id='c-menu-btn'] {
 
 .c-menu-btn__indicator div[class^="c-menu-btn__indicator--"] {
   position: relative;
-  background-color: #0023ff;
+  background-color: #00C1DB;
   height: 0.36364vh;
   border-radius: 0.13333vh;
   margin-top: 0.36364vh
@@ -464,7 +464,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
 }
 
 .c-menu-items li a:hover {
-  color: #0023ff;
+  color: #00C1DB;
   text-shadow: 0px 0px 0.8vh #0050ff
 }
 
@@ -480,7 +480,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   bottom: 5vh;
   text-align: center;
   padding: 1.5vh;
-  color: #0023ff;
+  color: #00C1DB;
   font-size: 2vh;
   font-weight: 400;
   transition: text-shadow 0.15s ease-in-out
@@ -499,7 +499,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   border: none;
   width: 40%;
   height: 2px;
-  background-color: #0023ff
+  background-color: #00C1DB
 }
 
 .body-search {
@@ -718,7 +718,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
 }
 
 .catalog__product .catalog__product__price {
-  color: #0023ff;
+  color: #00C1DB;
   font-weight: 700;
   font-size: 1.1vw;
   margin: 0
@@ -810,7 +810,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   width: 12vw;
   text-align: center;
   padding: 1vw;
-  color: #0023ff;
+  color: #00C1DB;
   font-size: 1vw;
   transition: text-shadow 0.15s ease-in-out
 }
@@ -919,7 +919,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
 
 .picture-tools__left a,
 .picture-tools__right a {
-  color: #0023ff
+  color: #00C1DB
 }
 
 .picture-tools__left {
@@ -974,7 +974,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
 }
 
 .product__description__content h1 span[class='name'] {
-  color: #0023ff
+  color: #00C1DB
 }
 
 .product__description__content>p {
@@ -1003,7 +1003,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
 
 .content__price-tools__price .price {
   margin: 0;
-  color: #0023ff;
+  color: #00C1DB;
   font-weight: 700;
   font-size: 2vw
 }
@@ -1220,7 +1220,7 @@ body {
   color: #ffffff;
   font-size: 1vw;
   font-weight: 900;
-  background-color: #0023ff;
+  background-color: #00C1DB;
   padding: 1vw 3vw;
   border-radius: 1.5vw;
   transition: background-color 0.15s ease, box-shadow 0.15s ease-in-out
@@ -1251,7 +1251,7 @@ input[id^='bg-tabs__tab-'] {
 }
 
 input[id^='bg-tabs__tab-']:checked+label {
-  background-color: #0023ff
+  background-color: #00C1DB
 }
 
 label[class^='bg-tabs__tab-'] {
