@@ -5,6 +5,8 @@
   height: 9%;
   /* width: 10% */
 }
+@font-face { font-family: 'vicons'; font-weight: normal; font-style: normal; src: url('../fonts/vicons/vicons.eot?1u5j7r'); src: url('../fonts/vicons/vicons.eot?#iefix1u5j7r') format('embedded-opentype'), url('../fonts/vicons/vicons.woff?1u5j7r') format('woff'), url('../fonts/vicons/vicons.ttf?1u5j7r') format('truetype'), url('../fonts/vicons/vicons.svg?1u5j7r#vicons') format('svg'); }
+.icon { font-family: 'vicons'; font-size: inherit; font-weight: normal; font-style: normal; line-height: inherit; position: relative; display: inline-block; transform: translate(0, 0); vertical-align: middle; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 @import url(https://fonts.googleapis.com/css?family=Lato:700,400,300italic,300,100);
  @import url(https://necolas.github.io/normalize.css/4.1.1/normalize.css);
@@ -1384,22 +1386,27 @@ label[class^='bg-tabs__tab-'] {
 	border-color: #7986cb;
 }
 .button--antiman.button--inverted-alt::before {
-	border-color: #3f51b5;
+	border-color: #7AD6FF;
+
 }
 .button--antiman::after {
 	background: #fff;
 }
 .button--antiman.button--inverted::after {
-	background: #7986cb;
+	background: #7AD6FF;
 }
 .button--antiman.button--inverted-alt::after {
-	background: #3f51b5;
+	background: #00C1DB;
+
+}
+.button--antiman.button {
+	color: #fff;
 }
 .button--antiman.button--inverted:hover {
 	color: #7986cb;
 }
 .button--antiman.button--inverted-alt:hover {
-	color: #3f51b5;
+	color: #7AD6FF;
 }
 .button--antiman:hover::before {
 	opacity: 1;
@@ -1411,3 +1418,5 @@ label[class^='bg-tabs__tab-'] {
 	-webkit-transform: scale3d(0.8, 0.8, 1);
 	transform: scale3d(0.8, 0.8, 1);
 }
+
+.icon-plus:before { content: '\e62f'; }
