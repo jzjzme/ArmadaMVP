@@ -1,6 +1,6 @@
                                                   $("#order-product").click(function() {
   var _productId = $("#order-product-id").val();
-  axios.get("/order/" + _productId).then(function(resp) {
+  axios.get("http://206.189.90.181:3000/order/" + _productId).then(function(resp) {
     alert(JSON.stringify(resp));
   });
 
@@ -12,7 +12,7 @@ $("#checkpoint").click(function() {
   var _checkpointId = $("#checkpoint-id").val();
 
 
-  axios.get("/order/" + _productId + "/checkpoint/" + _checkpointId).then(function(resp) {
+  axios.get("http://206.189.90.181:3000/order/" + _productId + "/checkpoint/" + _checkpointId).then(function(resp) {
     alert(JSON.stringify(resp));
   });
 });
