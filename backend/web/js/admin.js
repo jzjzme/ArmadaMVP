@@ -11,7 +11,7 @@ $("#order-product").click(function() {
     console.log(JSON.stringify(resp));
     console.log(JSON.stringify(resp.data));
     alert(resp.data.orderId);
-     qr.value = resp.data["orderId"];
+     qr.value = resp.data.orderId;
   });
 
  
