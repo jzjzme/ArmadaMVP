@@ -6,6 +6,8 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(express.static('web'));
+
 var products = require('./products.json');
 
 /* Format: [{"id":123, "itemId":234, "checkpoints":[]}]*/
