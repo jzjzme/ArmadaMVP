@@ -2,7 +2,7 @@
   var _productId = $("#order-product-id").val();
   axios.get("/order/" + _productId).then(function(resp) {
     //alert(JSON.stringify(resp));
-     qr.value = _productId;.data.orderId;
+     qr.value = _productId.data.orderId;
   });
 
  
