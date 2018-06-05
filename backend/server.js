@@ -25,7 +25,7 @@ app.get('/order/:id', (req, res) => {
     itemId: _itemId,
     checkpoints: []
   });
-  res.send({"orderId:": _orderId});
+  res.send({"orderId": _orderId});
 })
 
 // Get all orders

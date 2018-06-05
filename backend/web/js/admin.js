@@ -4,11 +4,14 @@ var qr = new QRious({
         element: document.getElementById('qr'),
         value: ''
       });
-                                                  $("#order-product").click(function() {
+
+$("#order-product").click(function() {
   var _productId = $("#order-product-id").val();
   axios.get("/order/" + _productId).then(function(resp) {
-    alert(JSON.stringify(resp));
-     qr.value = resp.data.orderId;
+    console.log(JSON.stringify(resp));
+    console.log(JSON.stringify(resp.data));
+    alert(resp.data.orderId);
+     qr.value = resp.data["orderId"];
   });
 
  
