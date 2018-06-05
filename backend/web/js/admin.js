@@ -1,3 +1,9 @@
+  
+
+var qr = new QRious({
+        element: document.getElementById('qr'),
+        value: ''
+      });
                                                   $("#order-product").click(function() {
   var _productId = $("#order-product-id").val();
   axios.get("/order/" + _productId).then(function(resp) {
@@ -17,8 +23,3 @@ $("#checkpoint").click(function() {
     alert(JSON.stringify(resp));
   });
 });
-
-var qr = new QRious({
-        element: document.getElementById('qr'),
-        value: ''
-      });
