@@ -2,6 +2,7 @@ package kmangutov.myapplication;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         setContentView(R.layout.activity_main);
         scannerView = findViewById(R.id.scanner);
@@ -116,7 +120,9 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
             }
             Log.v(TAG, chunks);
         }
-        catch (Exception e) {}
+        catch (Exception e) {
+            e.printStackTrace();
+        }
         finally {
 
         }
