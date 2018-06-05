@@ -10,7 +10,13 @@ import android.widget.Spinner;
 
 import com.google.zxing.Result;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,10 +81,10 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
         scannerView.resumeCameraPreview(this);
 
-        String productId = rawResult.getText();
+        String orderId = rawResult.getText();
         String checkpointId = spinner.getSelectedItem().toString();
 
-        Call call = armadaAPI.checkpoint(productId, checkpointId);
+        /*Call call = armadaAPI.checkpoint(productId, checkpointId);
         call.enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
@@ -89,7 +95,31 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
             public void onFailure(Call call, Throwable t) {
                 t.printStackTrace();
             }
-        });
+        });*/
+
+
+        try {
+            String strUrl = DOMAIN + "/order/" + orderId + "/checkpoint/" + checkpointId;
+            URL url = new URL(strUrl);
+
+            Log.v(TAG, strUrl);
+
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            InputStreamReader read = new InputStreamReader(in);
+            BufferedReader buff = new BufferedReader(read);
+            StringBuilder dta = new StringBuilder();
+            String chunks ;
+            while((chunks = buff.readLine()) != null)
+            {
+                dta.append(chunks);
+            }
+            Log.v(TAG, chunks);
+        }
+        catch (Exception e) {}
+        finally {
+
+        }
 
         //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.stackoverflow.com")));
     }
