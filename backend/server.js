@@ -22,9 +22,25 @@ Generate the data describing the path of a given product, eg
 */
 var getPathForProduct = function(productId, orderId) {
   var path = [];
-  path.push({"name": "Kowloon warehouse", "id": "0"});
-  path.push({"name": "Hong Knong post office", "id":"1"});
-  path.push({"name": "Customer received", "id":"2"});
+  path.push({"name": "Kowloon warehouse", "id": "0", "verified": false});
+  path.push({"name": "Hong Kong post office", "id":"1", "verified": false});
+  path.push({"name": "Customer received", "id":"2", "verified": false});
+  return path;
+}
+
+/*
+Go through an order path, and if the checkpointId is found, set verified true. Return new path.
+*/
+var markCheckpoint = function(path, checkpointId) {
+  console.log("In path " + JSON.stringify(path) + " mark " + checkpointId);
+  path.forEach(function(part, index, array) {
+    // Check the checkpointId
+    if (array[index].id == checkpointId) {
+      array[index].verified = true;
+    }
+  });
+  console.log("return " + JSON.stringify(path));
+  return path;
 }
 
 // Order instance of product 'productId'
@@ -52,11 +68,15 @@ app.get('/order/:id/checkpoint/:checkpoint', (req, res) => {
   var _checkpoint = req.params.checkpoint;
   var found = false;
 
+  // Identify the matching order id if it exists, and add the checkpoint
   orders.forEach(function(part, index, array) {
-    if(array[index].id == _order) {
+    if (array[index].id == _order) {
       found = true;
       console.log("Found product: " + array[index]);
       array[index].checkpoints.push(_checkpoint);
+
+      // Also scan through the product path, and mark checkpoint as verified
+      array[index].path = markCheckpoint(array[index].path, _checkpoint);
     }
   });
 
