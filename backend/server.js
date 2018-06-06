@@ -16,14 +16,27 @@ var orders = [];
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/products', (req, res) => res.send(products))
 
+/* 
+Generate the data describing the path of a given product, eg
+[{name: 'Kowloon warehouse', id:'23'}, {name: 'Hong Kong post office', id:'55'}, {name: 'US post office', id:'498324-99'}]
+*/
+var getPathForProduct = function(productId, orderId) {
+  var path = [];
+  path.push({"name": "Kowloon warehouse", "id": "0"});
+  path.push({"name": "Hong Knong post office", "id":"1"});
+  path.push({"name": "Customer received", "id":"2"});
+}
+
 // Order instance of product 'productId'
 app.get('/order/:id', (req, res) => {
   var _orderId = Date.now()
   var _itemId = req.params.id;
+  var _path = getPathForProduct(_itemId, _orderId);
   orders.push({
     id: _orderId,
     itemId: _itemId,
-    checkpoints: []
+    checkpoints: [],
+    path: _path
   });
   res.send({"orderId": _orderId});
 })
