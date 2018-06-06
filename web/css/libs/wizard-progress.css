@@ -60,6 +60,6 @@
     display: none;
 }
 
-.wizard-progress .active-step .step-num {
-    background-color: #ff0500;
+.wizard-progress .activestep .step-num {
+    background-color: #00C1DB;
 }

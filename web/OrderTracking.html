@@ -43,7 +43,37 @@
 <div>
 
 	<h2>Your active orders</h2>
-	<table class="table">
+
+
+
+
+<!--
+ 							<table id="orders-parent">
+                <tr><td>Order id</td><td>Product id</td><td>Checkpoints</td></tr>
+                     
+                <tr v-for="order in orders">
+
+                  <td>
+
+                      {{ order.id }}
+                  </td>
+                  <td>
+                      {{ order.itemId }}
+                  </td>
+                  <td>
+                      {{order.checkpoints}}
+                  </td>
+
+                  <td>
+                  		{{order.path}}
+                  </td>
+                </tr>
+              </table>
+-->
+
+
+
+	<table class="table" id="orders-parent">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -51,14 +81,28 @@
 				<th scope="col">Last</th>
 			</tr>
 		</thead>
-		<tr>
-			<td></td>
+		<tr v-for="order in orders">
+			<td>{{ order.id }}</td>
 			<td>
+
+
+
+
+
 				<!-- tracking progress bar -->
 
 
 <ol class="wizard-progress clearfix">
-    <li>
+		<div>
+		<li  v-for="checkpoint in order.path"
+				v-bind:class="{activestep: checkpoint.verified}">
+			<span class="step-name">
+				{{ checkpoint.name }}
+			</span>
+			<span class="visuallyhidden">Step </span><span class="step-num">{{ checkpoint.id }}</span>
+		</li>
+		</div>
+    <!--<li>
         <span class="step-name">
             Foo
         </span>
@@ -75,7 +119,7 @@
     <li>
         <span class="step-name">Quux</span>
         <span class="visuallyhidden">Step </span><span class="step-num">4</span>
-    </li>
+    </li>-->
 </ol>
 
 
@@ -90,6 +134,13 @@
 	</div>
 </section>
 
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.js"></script>
+<script src="js/app.js"></script>
+<script src="js/vendor/axios.min.js"></script>
+<script src="js/vendor/vue.js"></script>
+<script src="js/orders.js"></script>
 
 </body>
 </html>
